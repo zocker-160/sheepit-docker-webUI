@@ -7,16 +7,21 @@ Pretty similar to @AGSPhoenix's:
 
 ```
 docker run \
- --name "sheepit" \
- --rm -p 5800:5800 \
+ --name "Sheepit Client" \
+ -p 5800:5800 \
 zocker160/sheepit-docker-webui:latest
 ```
 
-You can also specify the `cpu` variable to override autodetection; like `-e cpu=4`.
+Additional parameters:
 
-You should be able to access the Sheepit-GUI by opening in a web browser:
+- `cpu` to override autodetection; like `-e cpu=4`.
+- `VNC_PASSWORD` specify a password to connect to the GUI
 
-`http://[HOST IP ADDR]:5800`
+#####You should be able to access the Sheepit-GUI by opening in a web browser:
+
+`http://[HOST IP ADDR]:[port]`
+
+
 
 ## Extra bits
 [Docker Hub page](https://hub.docker.com/r/zocker160/sheepit-docker-webui//)  
