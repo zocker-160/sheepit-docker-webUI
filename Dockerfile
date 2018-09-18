@@ -12,14 +12,14 @@ RUN \
 	openjdk-8-jre \
 	curl \
 	#install Blender to get all dependencies
-	blender
-	#libsdl1.2debian \
-	#libxxf86vm1 \
-	#libgl1-mesa-glx \
-	#libglu1-mesa \
-	#libxi6 \
-	#libxrender1 \
-	#libxfixes3
+	#blender
+	libsdl1.2debian \
+	libxxf86vm1 \
+	libgl1-mesa-glx \
+	libglu1-mesa \
+	libxi6 \
+	libxrender1 \
+	libxfixes3
 
 WORKDIR /sheep
 COPY startapp.sh /startapp.sh
@@ -36,4 +36,4 @@ ENV DISPLAY_WIDTH="600"
 #ENV user_password ""
 ENV cpu "0"
 
-VOLUME ["/sheep"]
+#VOLUME ["/sheep"]
