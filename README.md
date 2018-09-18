@@ -8,10 +8,15 @@ Pretty similar to @AGSPhoenix's:
 ```
 docker run \
  --name "sheepit" \
+ --rm -p 5800:5800 \
 zocker160/sheepit-docker-webui:latest
 ```
 
 You can also specify the `cpu` variable to override autodetection; like `-e cpu=4`.
+
+You should be able to access the Sheepit-GUI by opening in a web browser:
+
+`http://[HOST IP ADDR]:5800`
 
 ## Extra bits
 [Docker Hub page](https://hub.docker.com/r/zocker160/sheepit-docker-webui//)  
