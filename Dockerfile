@@ -11,14 +11,15 @@ RUN \
   && apt-get install -y --no-install-recommends \
 	openjdk-8-jre \
 	curl \
-	#Blender dependencies
-	libsdl1.2debian \
-	libxxf86vm1 \
-	libgl1-mesa-glx \
-	libglu1-mesa \
-	libxi6 \
- 	libxrender1 \
-	libxfixes3
+	#install Blender to get all dependencies
+	blender
+	#libsdl1.2debian \
+	#libxxf86vm1 \
+	#libgl1-mesa-glx \
+	#libglu1-mesa \
+	#libxi6 \
+	#libxrender1 \
+	#libxfixes3
 
 WORKDIR /sheep
 COPY startapp.sh /startapp.sh
