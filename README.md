@@ -16,6 +16,7 @@ Additional parameters:
 
 - `cpu` to override autodetection; like `-e cpu=4`.
 - `VNC_PASSWORD` specify a password to connect to the GUI
+- `KEEP_APP_RUNNING` when set to `1`, the application will be automatically restarted if it crashes or if user quits it; default: `0`
 
 ##### You should be able to access the Sheepit-GUI by opening in a web browser:
 
