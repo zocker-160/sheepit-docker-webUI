@@ -17,7 +17,7 @@ Additional parameters:
 - `cpu` to override autodetection; like `-e cpu=4`.
 - `VNC_PASSWORD` specify a password to connect to the GUI
 
-#####You should be able to access the Sheepit-GUI by opening in a web browser:
+##### You should be able to access the Sheepit-GUI by opening in a web browser:
 
 `http://[HOST IP ADDR]:[port]`
 
