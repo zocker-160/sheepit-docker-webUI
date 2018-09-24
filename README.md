@@ -9,6 +9,7 @@ Pretty similar to @AGSPhoenix's:
 docker run \
  --name "Sheepit Client" \
  -p 5800:5800 \
+ -p 5900:5900 \
 zocker160/sheepit-docker-webui:latest
 ```
 
@@ -20,9 +21,11 @@ Additional parameters:
 
 ##### You should be able to access the Sheepit-GUI by opening in a web browser:
 
-`http://[HOST IP ADDR]:[port]`
+`http://[HOST IP ADDR]:5800`
 
+##### You can connect with any VNC client of your choise as well:
 
+` [HOST IP ADDR]:5900`
 
 ## Extra bits
 [Docker Hub page](https://hub.docker.com/r/zocker160/sheepit-docker-webui//)  
