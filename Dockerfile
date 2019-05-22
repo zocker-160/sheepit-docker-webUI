@@ -36,4 +36,4 @@ ENV DISPLAY_WIDTH="600"
 #ENV user_password ""
 ENV cpu "0"
 
-#VOLUME ["/sheep"]
+#VOLUME /sheep
