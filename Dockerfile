@@ -30,7 +30,7 @@ RUN APP_ICON_URL=https://raw.githubusercontent.com/laurent-clouet/sheepit-client
 ENV APP_NAME="Sheepit Renderclient"
 ENV USER_ID="0"
 ENV GROUP_ID="0"
-ENV DISPLAY_HEIGHT="600"
+ENV DISPLAY_HEIGHT="800"
 ENV DISPLAY_WIDTH="500"
 #ENV user_name ""
 #ENV user_password ""
