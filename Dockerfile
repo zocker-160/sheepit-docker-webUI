@@ -2,6 +2,8 @@ FROM jlesage/baseimage-gui:debian-9
 
 MAINTAINER zocker-160
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN \
 # MAN folder needed for jre install
      mkdir -p /usr/share/man/man1 \
