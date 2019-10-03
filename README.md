@@ -1,16 +1,31 @@
-# A simple dockerized SheepIt render farm client with webUI
+# A simple dockerized SheepIt render farm client with webUI and CUDA support
 
-This docker image is based on [@AGSPhoenix's](https://github.com/AGSPhoenix/sheepit-docker) Docker image.
+This docker image is based on [@AGSPhoenix's](https://github.com/AGSPhoenix/sheepit-docker) Docker image and adds a WebUI and CUDA support for rendering on Nvidias GPUs.
+
+---
+
+In order to make this image work, you need to have [nvidia-docker2](https://github.com/NVIDIA/nvidia-docker) installed in order to enable passthru to the nvidia card(s).
+
+You will also need to have the [Nvidia-CUDA-toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64)  to be installed on your host system.
+
 
 ## Instructions
-Pretty similar to @AGSPhoenix's:
-
+#### CPU
 ```
 docker run \
  --name "Sheepit Client" \
  -p 5800:5800 \
  -p 5900:5900 \
 zocker160/sheepit-docker-webui:latest
+```
+#### GPU
+```
+docker run \
+ --name "Sheepit Client" \
+ --runtime=nvidia \
+ -p 5800:5800 \
+ -p 5900:5900 \
+zocker160/sheepit-docker-webui:nvidia
 ```
 
 Additional parameters:
