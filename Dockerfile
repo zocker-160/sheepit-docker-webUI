@@ -26,7 +26,7 @@ RUN \
 WORKDIR /sheep
 COPY startapp.sh /startapp.sh
 
-RUN APP_ICON_URL=https://raw.githubusercontent.com/laurent-clouet/sheepit-client/master/resources/icon.png && \
+RUN APP_ICON_URL=https://www.sheepit-renderfarm.com/media/image/title.png && \
 	install_app_icon.sh "$APP_ICON_URL"
 
 ENV APP_NAME="Sheepit Renderclient"
