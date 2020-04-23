@@ -8,9 +8,10 @@ In order to make this image work, you need to have [nvidia-docker2](https://gith
 
 You will also need to have the [Nvidia-CUDA-toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64)  to be installed on your host system.
 
-
 ## Instructions
+
 #### CPU
+
 ```
 docker run \
  --name "Sheepit Client" \
@@ -18,7 +19,11 @@ docker run \
  -p 5900:5900 \
 zocker160/sheepit-docker-webui:latest
 ```
+
+**in order to update the sheepit client itself, you only need to restart the container, it will download the latest version on startup**
+
 #### GPU
+
 ```
 docker run \
  --name "Sheepit Client" \
@@ -43,6 +48,7 @@ Additional parameters:
 ` [HOST IP ADDR]:5900`
 
 ## Extra bits
+
 [Docker Hub page](https://hub.docker.com/r/zocker160/sheepit-docker-webui//)  
 [GitHub page](https://github.com/zocker-160/sheepit-docker-webUI)
 
