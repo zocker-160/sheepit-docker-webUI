@@ -65,6 +65,7 @@ RUN APP_ICON_URL=https://www.sheepit-renderfarm.com/media/image/title.png && \
 ENV APP_NAME="Sheepit Renderclient"
 ENV USER_ID="0"
 ENV GROUP_ID="0"
+ENV DISPLAY=":5"
 ENV DISPLAY_HEIGHT="800"
 ENV DISPLAY_WIDTH="500"
 #ENV user_name ""
