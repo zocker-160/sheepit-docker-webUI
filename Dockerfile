@@ -1,4 +1,4 @@
-FROM jlesage/baseimage-gui:debian-9
+FROM jlesage/baseimage-gui:debian-10
 
 MAINTAINER zocker-160
 
@@ -11,7 +11,7 @@ RUN \
 # Install JRE and curl
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-	openjdk-8-jre \
+	default-jre \
 	curl \
 	#install Blender to get all dependencies
 	#blender
