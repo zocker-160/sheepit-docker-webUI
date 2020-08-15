@@ -35,8 +35,8 @@ zocker160/sheepit-docker-webui:nvidia
 
 Additional optional parameters:
 
-- `USER_NAME`
-- `USER_PASSWORD`
+- `USER_NAME` (filled with `username` as placeholder)
+- `USER_PASSWORD` (filled with `password` as placeholder)
 - `cpu`: override autodetection; like `-e cpu=4`.
 - `UI_MODE`: when set to `DARK`, the webUI will be set into dark mode; default: `LITE`
 - `APP_NAME`:  specify the name shown in the webUI header; default: `Sheepit Renderclient`
