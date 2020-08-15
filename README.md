@@ -33,9 +33,13 @@ docker run \
 zocker160/sheepit-docker-webui:nvidia
 ```
 
-Additional parameters:
+Additional optional parameters:
 
-- `cpu` to override autodetection; like `-e cpu=4`.
+- `USER_NAME`
+- `USER_PASSWORD`
+- `cpu`: override autodetection; like `-e cpu=4`.
+- `UI_MODE`: when set to `DARK`, the webUI will be set into dark mode; default: `LITE`
+- `APP_NAME`:  specify the name shown in the webUI header; default: `Sheepit Renderclient`
 - `VNC_PASSWORD` specify a password to connect to the GUI
 - `KEEP_APP_RUNNING` when set to `1`, the application will be automatically restarted if it crashes or if user quits it; default: `0`
 

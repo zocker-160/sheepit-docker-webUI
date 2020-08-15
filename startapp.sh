@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /usr/bin/env bash
 
 #Check for updates
 echo Downloading latest version...
@@ -15,4 +15,12 @@ if [ $cpu -eq 0 ]; then
 fi
 
 echo Starting client...
-java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /sheep/cache
+if [[ $UI_MODE == "DARK" ]];
+then
+	echo "switching to dark mode"
+	# fix background color (I have no idea how to do that properly soo yeah)
+	sed -i -e 's/<body>/<body style="background-color: #292b2d">/g' /opt/novnc/index.html
+	java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -login $USER_NAME -password $USER_PASSWORD -theme dark
+fi
+
+java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -login $USER_NAME -password $USER_PASSWORD -theme light
