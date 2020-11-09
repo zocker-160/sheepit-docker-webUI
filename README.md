@@ -33,15 +33,17 @@ docker run \
 zocker160/sheepit-docker-webui:nvidia
 ```
 
-Additional optional parameters:
+##### Additional optional parameters:
 
 - `USER_NAME` (filled with `username` as placeholder)
 - `USER_PASSWORD` (filled with `password` as placeholder)
 - `cpu`: override autodetection; like `-e cpu=4`.
 - `UI_MODE`: when set to `DARK`, the webUI will be set into dark mode; default: `LITE`
 - `APP_NAME`:  specify the name shown in the webUI header; default: `Sheepit Renderclient`
-- `VNC_PASSWORD` specify a password to connect to the GUI
-- `KEEP_APP_RUNNING` when set to `1`, the application will be automatically restarted if it crashes or if user quits it; default: `0`
+- `VNC_PASSWORD`: specify a password to connect to the GUI
+- `KEEP_APP_RUNNING`: when set to `1`, the application will be automatically restarted if it crashes or if user quits it; default: `0`
+- `DISPLAY_HEIGHT`: set height of the window; default: `"900"`
+- `DISPLAY_WIDTH`: set width of the window; default: `"500"`
 
 ##### You should be able to access the Sheepit-GUI by opening in a web browser:
 
