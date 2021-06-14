@@ -11,7 +11,7 @@ curl https://www.sheepit-renderfarm.com/media/applet/client-latest.php -o /sheep
 #Autodetect cores
 if [ $cpu -eq 0 ]
 then
-	cpu = $(nproc)
+	cpu=$(nproc)
     echo "No thread count specified, autodetected $cpu threads."
 fi
 
@@ -21,9 +21,9 @@ then
 	echo "switching to dark mode"
 	# fix background color (I have no idea how to do that properly soo yeah)
 	sed -i -e 's/<body>/<body style="background-color: #292b2d">/g' /opt/novnc/index.html
-	theme = "dark"
+	theme="dark"
 else
-	theme = "light"
+	theme="light"
 fi
 
 if [ -z $USER_NAME ] || [ -z $USER_PASSWORD ]
