@@ -15,6 +15,7 @@ An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacent
 ```bash
 docker run \
  --name "Sheepit Client" \
+ --hostname "Docker webUI" \
  -p 5800:5800 \
  -p 5900:5900 \
 zocker160/sheepit-docker-webui:latest
@@ -27,16 +28,17 @@ zocker160/sheepit-docker-webui:latest
 ```bash
 docker run \
  --name "Sheepit Client" \
+ --hostname "Docker webUI" \
  --runtime=nvidia \
  -p 5800:5800 \
  -p 5900:5900 \
 zocker160/sheepit-docker-webui:nvidia
 ```
 
-##### Additional optional parameters:
+##### Optional ENV variables `-e <var>`:
 
-- `USER_NAME` (filled with `username` as placeholder)
-- `USER_PASSWORD` (filled with `password` as placeholder)
+- `USER_NAME`: Sheepit username
+- `USER_PASSWORD`: Sheepit render key ([generate one](https://www.sheepit-renderfarm.com/account.php?mode=profile_edit))
 - `cpu`: override autodetection; like `-e cpu=4`.
 - `UI_MODE`: when set to `DARK`, the webUI will be set into dark mode; default: `LITE`
 - `APP_NAME`:  specify the name shown in the webUI header; default: `Sheepit Renderclient`
