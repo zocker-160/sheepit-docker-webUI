@@ -28,7 +28,7 @@ fi
 
 if [ -z $USER_NAME ] || [ -z $USER_PASSWORD ]
 then
-	java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -$theme
+	java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -theme $theme
 else
 	java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -login $USER_NAME -password $USER_PASSWORD -theme $theme
 fi
