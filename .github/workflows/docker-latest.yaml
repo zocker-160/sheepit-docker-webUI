@@ -1,0 +1,28 @@
+name: Docker Builder
+
+on:
+  push:
+    branches:
+      - testing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'testing'
+        
+    - name: Build the Docker image and push
+      env:
+        HUB_NAME: ${{ secrets.DOCKER_NAME }}
+        HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
+      run: |
+        docker login -u $HUB_NAME -p $HUB_KEY
+
+        docker build . --pull --no-cache -f Dockerfile -t zocker160/sheepit-docker-webui:testing
+        docker build . --pull --no-cache -f Dockerfile.nvidia -t zocker160/sheepit-docker-webui:nvidia-testing
+
+        docker push zocker160/sheepit-docker-webui:testing
+        docker push zocker160/sheepit-docker-webui:nvidia-testing
