@@ -10,7 +10,7 @@ curl https://www.sheepit-renderfarm.com/media/applet/client-latest.php -o /sheep
 
 #Autodetect cores
 if [ $cpu -eq 0 ]; then
-    echo No thread count specified, autodetected `nproc` threads.
+    echo "No thread count specified, autodetected `nproc` threads."
     cpu=`nproc`
 fi
 
