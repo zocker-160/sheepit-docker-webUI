@@ -3,7 +3,7 @@ name: Docker Builder
 on:
   push:
     branches:
-      - testing
+      - master
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: 'testing'
+        ref: 'master'
         
     - name: Build the Docker image and push
       env:
@@ -21,8 +21,8 @@ jobs:
       run: |
         docker login -u $HUB_NAME -p $HUB_KEY
 
-        docker build . --pull --no-cache -f Dockerfile -t zocker160/sheepit-docker-webui:testing
-        docker build . --pull --no-cache -f Dockerfile.nvidia -t zocker160/sheepit-docker-webui:nvidia-testing
+        docker build . --pull --no-cache -f Dockerfile -t zocker160/sheepit-docker-webui:latest
+        docker build . --pull --no-cache -f Dockerfile.nvidia -t zocker160/sheepit-docker-webui:nvidia
 
-        docker push zocker160/sheepit-docker-webui:testing
-        docker push zocker160/sheepit-docker-webui:nvidia-testing
+        docker push zocker160/sheepit-docker-webui:latest
+        docker push zocker160/sheepit-docker-webui:nvidia
