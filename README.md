@@ -35,6 +35,8 @@ docker run \
 zocker160/sheepit-docker-webui:nvidia
 ```
 
+**NOTE:** the tag `nvidia-legacy` is meant for older Nvidia GPUs prior to Pascal and CUDA <= 11.0.
+
 ##### Optional ENV variables `-e <var>`:
 
 - `USER_NAME`: Sheepit username
