@@ -11,16 +11,16 @@ RUN \
 # Install JRE and curl
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-	default-jre \
-	curl \
-	libsdl1.2debian \
-	libxxf86vm1 \
-	libgl1-mesa-glx \
-	libglu1-mesa \
-	libxi6 \
-	libxrender1 \
-	libxfixes3 \
-	libglu1-mesa
+    default-jre \
+    curl \
+    libsdl1.2debian \
+    libxxf86vm1 \
+    libgl1-mesa-glx \
+    libglu1-mesa \
+    libxi6 \
+    libxrender1 \
+    libxfixes3 \
+    libglu1-mesa
 
 WORKDIR /sheep
 COPY startapp.sh /startapp.sh
