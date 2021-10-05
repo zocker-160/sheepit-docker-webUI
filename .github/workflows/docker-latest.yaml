@@ -23,6 +23,8 @@ jobs:
 
         docker build . --pull --no-cache -f Dockerfile -t zocker160/sheepit-docker-webui:latest
         docker build . --pull --no-cache -f Dockerfile.nvidia -t zocker160/sheepit-docker-webui:nvidia
+        docker build . --pull --no-cache -f Dockerfile.nvidia-legacy -t zocker160/sheepit-docker-webui:nvidia-legacy
 
         docker push zocker160/sheepit-docker-webui:latest
         docker push zocker160/sheepit-docker-webui:nvidia
+        docker push zocker160/sheepit-docker-webui:nvidia-legacy
