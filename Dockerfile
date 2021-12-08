@@ -11,7 +11,7 @@ RUN \
 # Install JRE and curl
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-    default-jre \
+    openjdk-11-jre \
     curl \
     libsdl1.2debian \
     libxxf86vm1 \
