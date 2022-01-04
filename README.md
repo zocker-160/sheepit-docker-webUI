@@ -32,6 +32,10 @@ zocker160/sheepit-docker-webui:nvidia
 
 **NOTE:** the tag `nvidia-legacy` is meant for older Nvidia GPUs prior to Pascal and CUDA <= 11.0.
 
+#### Use custom sheepit.jar file (for beta testing for example)
+
+Set `BETA_CHANNEL` to `true` and `DOWNLOAD_URL` to the URL which links to a jar file, which can be downloaded.
+
 ##### Optional ENV variables `-e <var>`:
 
 - `USER_NAME`: Sheepit username

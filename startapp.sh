@@ -5,7 +5,12 @@ echo Downloading latest version...
 
 rm -rf /sheep/*.jar
 
-curl https://www.sheepit-renderfarm.com/media/applet/client-latest.php -o /sheep/sheepit-client.jar
+if [ "$BETA_CHANNEL" == "true" ] &&  [ "$DOWNLOAD_URL" != "" ]
+then
+    curl "$DOWNLOAD_URL" -o /sheep/sheepit-client.jar
+else
+    curl https://www.sheepit-renderfarm.com/media/applet/client-latest.php -o /sheep/sheepit-client.jar
+fi
 
 
 #Autodetect cores

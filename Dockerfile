@@ -7,10 +7,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
 # MAN folder needed for jre install
      mkdir -p /usr/share/man/man1 \
-  && mkdir -p /sheep/cache \
+    && mkdir -p /sheep/cache \
 # Install JRE and curl
-  && apt-get update \
-  && apt-get install -y --no-install-recommends \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
     openjdk-11-jre \
     curl \
     libsdl1.2debian \
@@ -42,5 +42,8 @@ ENV UI_MODE="DARK"
 ENV USER_NAME=""
 ENV USER_PASSWORD=""
 ENV cpu "0"
+
+ENV BETA_CHANNEL="false"
+ENV DOWNLOAD_URL=""
 
 #VOLUME /sheep
