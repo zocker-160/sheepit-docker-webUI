@@ -1,10 +1,8 @@
 # A simple dockerized SheepIt render farm client with webUI and CUDA support
+
+**in order to update the sheepit client itself, you only need to restart the container, it will download the latest version on startup**
+
 ## Instructions
-
-In order to make this image work, you need Docker >= 19.03 and the latest [NVIDIA driver](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver) and `nvidia-docker2` installed on your host system.
-
-An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian).
-
 #### CPU
 
 ```bash
@@ -13,12 +11,18 @@ docker run \
  --hostname "Docker webUI" \
  -p 5800:5800 \
  -p 5900:5900 \
-zocker160/sheepit-docker-webui:latest
+zocker160/sheepit-docker-webui
 ```
 
-**in order to update the sheepit client itself, you only need to restart the container, it will download the latest version on startup**
-
 #### GPU
+
+In order to make this image work, you need 
+
+- Docker >= 19.03 
+- Nvidia GPU driver
+- `nvidia-docker2`
+
+An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
 
 ```bash
 docker run \
@@ -27,10 +31,10 @@ docker run \
  --gpus all \
  -p 5800:5800 \
  -p 5900:5900 \
-zocker160/sheepit-docker-webui:nvidia
+zocker160/sheepit-docker-webui
 ```
 
-**NOTE:** the tag `nvidia-legacy` is meant for older Nvidia GPUs prior to Pascal and CUDA <= 11.0.
+**NOTE:** the tag `nvidia-legacy` is can be used for older Nvidia GPUs prior to Pascal and CUDA <= 11.0.
 
 #### Use custom sheepit.jar file (for beta testing for example)
 

@@ -1,9 +1,10 @@
 #! /usr/bin/env bash
 
 #Check for updates
-echo Downloading latest version...
+echo "Downloading latest version..."
 
 rm -rf /sheep/*.jar
+rm -rf /tmp/* || true
 
 if [ "$BETA_CHANNEL" == "true" ] &&  [ "$DOWNLOAD_URL" != "" ]
 then
@@ -17,24 +18,24 @@ fi
 #Autodetect cores
 if [ $cpu -eq 0 ]
 then
-	cpu=$(nproc)
     echo "No thread count specified, autodetected $cpu threads."
+    cpu=$(nproc)
 fi
 
-echo Starting client...
+echo "Starting client..."
 if [ "$UI_MODE" == "DARK" ]
 then
-	echo "switching to dark mode"
-	# fix background color (I have no idea how to do that properly soo yeah)
-	sed -i -e 's/<body>/<body style="background-color: #292b2d">/g' /opt/novnc/index.html
-	theme="dark"
+    echo "switching to dark mode"
+    # fix background color (I have no idea how to do that properly soo yeah)
+    sed -i -e 's/<body>/<body style="background-color: #292b2d">/g' /opt/novnc/index.html
+    theme="dark"
 else
-	theme="light"
+    theme="light"
 fi
 
 if [ -z $USER_NAME ] || [ -z $USER_PASSWORD ]
 then
-	java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -theme $theme
+    java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -theme $theme
 else
-	java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -login $USER_NAME -password $USER_PASSWORD -theme $theme
+    java -jar /sheep/sheepit-client.jar -cores $cpu -cache-dir /tmp -login $USER_NAME -password $USER_PASSWORD -theme $theme
 fi

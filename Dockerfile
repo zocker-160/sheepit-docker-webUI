@@ -3,6 +3,8 @@ FROM jlesage/baseimage-gui:debian-10
 MAINTAINER zocker-160
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 
 RUN \
 # MAN folder needed for jre install
@@ -24,6 +26,7 @@ RUN \
 
 WORKDIR /sheep
 COPY startapp.sh /startapp.sh
+RUN chmod +x /startapp.sh
 
 RUN APP_ICON_URL=https://www.sheepit-renderfarm.com/media/image/title.png && \
 	install_app_icon.sh "$APP_ICON_URL"
@@ -45,5 +48,3 @@ ENV cpu "0"
 
 ENV BETA_CHANNEL="false"
 ENV DOWNLOAD_URL=""
-
-#VOLUME /sheep
