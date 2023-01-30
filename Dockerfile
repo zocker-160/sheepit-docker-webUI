@@ -8,8 +8,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 
 RUN \
 # MAN folder needed for jre install
-     mkdir -p /usr/share/man/man1 \
-    && mkdir -p /sheep/cache \
+mkdir -p /usr/share/man/man1 && mkdir -p /sheep/cache \
 # Install JRE and curl
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -22,7 +21,8 @@ RUN \
     libxi6 \
     libxrender1 \
     libxfixes3 \
-    libglu1-mesa
+    libglu1-mesa \
+    libxkbcommon0
 
 WORKDIR /sheep
 COPY startapp.sh /startapp.sh
