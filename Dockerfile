@@ -1,27 +1,26 @@
-FROM jlesage/baseimage-gui:debian-10
+FROM jlesage/baseimage-gui:debian-11
 
 MAINTAINER zocker-160
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+ENV NVIDIA_DRIVER_CAPABILITIES all
 
 RUN \
-# MAN folder needed for jre install
-mkdir -p /usr/share/man/man1 && mkdir -p /sheep/cache \
-# Install JRE and curl
+    # MAN folder needed for jre install
+    mkdir -p /usr/share/man/man1 && mkdir -p /sheep/cache \
+    # Install JRE and curl
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     openjdk-11-jre \
     curl \
+    # Blender dependencies
     libsdl1.2debian \
-    libxxf86vm1 \
-    libgl1-mesa-glx \
-    libglu1-mesa \
     libxi6 \
     libxrender1 \
-    libxfixes3 \
     libglu1-mesa \
+    libgl1-mesa-glx \
+    libxxf86vm1 \
     libxkbcommon0
 
 WORKDIR /sheep
