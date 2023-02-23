@@ -5,21 +5,20 @@ MAINTAINER zocker-160
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
-# MAN folder needed for jre install
-mkdir -p /usr/share/man/man1 && mkdir -p /sheep/cache \
-# Install JRE and curl
+    # MAN folder needed for jre install
+    mkdir -p /usr/share/man/man1 && mkdir -p /sheep/cache \
+    # Install JRE and curl
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     openjdk-11-jre \
     curl \
+    # Blender dependencies
     libsdl1.2debian \
-    libxxf86vm1 \
-    libgl1-mesa-glx \
-    libglu1-mesa \
     libxi6 \
     libxrender1 \
-    libxfixes3 \
     libglu1-mesa \
+    libgl1-mesa-glx \
+    libxxf86vm1 \
     libxkbcommon0
 
 ### Install Nvidia CUDA drivers
@@ -51,7 +50,7 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
 
 # nvidia-container-runtime
 ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+ENV NVIDIA_DRIVER_CAPABILITIES all
 ENV NVIDIA_REQUIRE_CUDA "cuda>=11.0 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441 driver>=450"
 
 ###
