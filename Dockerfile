@@ -14,14 +14,15 @@ RUN \
     && apt-get install -y --no-install-recommends \
     openjdk-11-jre \
     curl \
+    xz-utils \
     # Blender dependencies
-    libsdl1.2debian \
     libxi6 \
+    libsm6 \
     libxrender1 \
     libglu1-mesa \
     libgl1-mesa-glx \
     libxxf86vm1 \
-    libxkbcommon0
+    libxkbcommon0 \
 
 WORKDIR /sheep
 COPY startapp.sh /startapp.sh
