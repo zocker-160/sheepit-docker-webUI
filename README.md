@@ -14,6 +14,23 @@ docker run \
 zocker160/sheepit-docker-webui
 ```
 
+`docker-compose.yml`
+```yml
+services:
+  handbrake:
+    image: zocker160/sheepit-docker-webui:latest
+    container_name: "Sheepit Client"
+    hostname: "Sheepit Docker webUI"
+    ports:
+      - 5800:5800  # WebUI
+      #- 5900:5900 # VNC
+    restart: unless-stopped
+    environment:
+      - UI_MODE=DARK
+      #- USER_NAME=
+      #- USER_PASSWORD=
+```
+
 #### GPU
 
 In order to make this image work, you need 
@@ -32,6 +49,28 @@ docker run \
  -p 5800:5800 \
  -p 5900:5900 \
 zocker160/sheepit-docker-webui
+```
+`docker-compose.yml`
+```yml
+services:
+  handbrake:
+    image: zocker160/sheepit-docker-webui:latest
+    container_name: "Sheepit Client"
+    hostname: "Sheepit Docker webUI"
+    ports:
+      - 5800:5800  # WebUI
+      #- 5900:5900 # VNC
+    restart: unless-stopped
+    environment:
+      - UI_MODE=DARK
+      #- USER_NAME=
+      #- USER_PASSWORD=
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - count: all
+              capabilities: [gpu]
 ```
 
 **NOTE:** the tag `nvidia-legacy` is can be used for older Nvidia GPUs prior to Pascal and CUDA <= 11.0.
